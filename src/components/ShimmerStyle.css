@@ -1,0 +1,27 @@
+.Shimmer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.shimmer-card {
+  margin: 8px;
+  width: 250px;
+  height: 380px;
+  padding: 8px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+.img-container {
+  height: 160px;
+  width: 249px;
+  border-radius: 8px;
+  background-color: #e1dada;
+  margin-bottom: 25px;
+}
+.content {
+  margin-top: 20px;
+  width: 247px;
+  height: 30px;
+  border-radius: 8px;
+  background-color: #e1dada;
+}

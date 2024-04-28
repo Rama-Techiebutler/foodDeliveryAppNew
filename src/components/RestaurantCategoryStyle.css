@@ -1,0 +1,20 @@
+.title {
+  width: 98%;
+  margin: 15px 0px;
+  background-color: rgb(247, 250, 253);
+  padding: 10px 8px;
+  border-radius: 10px;
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  box-shadow: -1px -1px 5px 0px #3c3e4f;
+  /* padding: 0px; */
+}
+.itemscategory {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bolder;
+  height: 35px;
+  font-size: 18px;
+  color: #2d2d3d;
+  padding: 2px 0px 0px 10px;
+  cursor: pointer;
+}

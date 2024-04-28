@@ -1,0 +1,79 @@
+* {
+  font-family: "Rubik", sans-serif;
+}
+.body1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.filter {
+  margin: 15px 14px;
+  width: 97%;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e0e3e7;
+  border-radius: 8px;
+  height: 40px;
+  width: 250px;
+  margin: 5px;
+}
+
+input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  flex: 1;
+  font-size: 16px;
+  font-weight: 16px;
+  padding-left: 10px;
+}
+.search button {
+  border: 0;
+  outline: 0;
+  background-color: #da6517;
+  color: #fff;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 20%;
+}
+.filter-btn {
+  border: 0;
+  outline: 0;
+  background-color: #da6517;
+  color: #fff;
+  width: 250px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 5px;
+}
+.search button:hover {
+  background-color: #f5cccc;
+  color: #f56d13;
+  cursor: pointer;
+}
+.filter-btn:hover {
+  background-color: #f5cccc;
+  color: #f56d13;
+  cursor: pointer;
+}
+.res-Container a {
+  text-decoration: none;
+  color: inherit;
+}
+@media screen and (max-width: 600px) {
+  .filter {
+    justify-content: space-evenly;
+  }
+}

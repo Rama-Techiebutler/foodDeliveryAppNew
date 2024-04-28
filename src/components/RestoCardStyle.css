@@ -1,0 +1,52 @@
+.res-Container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.res-card {
+  margin: 8px;
+  width: 250px;
+  height: 400px;
+  padding: 8px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+.res-card:hover {
+  border: 1px solid rgb(79, 74, 74);
+  cursor: pointer;
+}
+.res-card img {
+  height: 160px;
+  width: 249px;
+  border-radius: 8px;
+}
+.restoinfo {
+  display: flex;
+  /* text-align: center; */
+  justify-content: space-between;
+  align-items: center;
+}
+.ratingc {
+  display: flex;
+  align-items: center;
+  color: green;
+}
+.icon {
+  margin-left: 5px;
+  margin-top: 3px;
+}
+button {
+  height: 30px;
+  width: 60px;
+  font-size: 15px;
+  /* background-color: #f1edea; */
+  color: #070505;
+  border-radius: 8px;
+  border: 0;
+  outline: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@media screen {
+}
