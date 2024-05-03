@@ -10,11 +10,17 @@ const MenuSimmer = ({ numberOfData }) => {
         <div key={cardIndex} className="menusimmer-card">
           <div className="restodata"></div>
           {/* {data.map((item, index) => (
-            <>
-              <div key={index} className="con">
-                <div className="img-con"></div>
-              </div>
-            </>
+            <> */}
+          <div className="con">
+            <div className="img-con"></div>
+          </div>
+          <div className="con">
+            <div className="img-con"></div>
+          </div>
+          <div className="con">
+            <div className="img-con"></div>
+          </div>
+          {/* </>
           ))} */}
         </div>
       ))}

@@ -19,11 +19,12 @@ const App = () => {
   const [datas, setDatas] = useState(null);
   // const navigate = useNavigate();
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem("LogInfo");
+    const isLoggedIn = JSON.parse(localStorage.getItem("LogInfo"));
     console.log(datas, "datas");
     console.log(setDatas, "setDatassss");
     if (isLoggedIn) {
-      // navigate("/");
+      datas(isLoggedIn);
+      navigate("/");
     }
   }, []);
   return (

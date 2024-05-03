@@ -208,8 +208,16 @@ const SignUp = () => {
             </Box>
             <Box sx={{ ml: 2, mt: 1 }}>
               <Button
-                sx={{ width: 90, background: "#da6517", color: "black" }}
+                sx={{
+                  width: 90,
+                  background: "#da6517",
+                  color: "black",
+                  "&:hover": {
+                    background: "#e6d9cf",
+                  },
+                }}
                 // onClick={signupClick}
+
                 type="submit"
               >
                 Sign Up

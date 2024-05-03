@@ -15,7 +15,12 @@ const Cart = ({}) => {
   const handleClearCart = () => {
     dispatch(clearCart());
   };
-
+  const totalPrice = cartItems.reduce((accumulator, currentItem) => {
+    return (
+      accumulator + currentItem.card.info.price * currentItem.card.info.quantity
+    );
+  }, 0);
+  const finalPrice = (totalPrice / 100).toString();
   const getTotalPrice = () => {
     const totalPrice = cartItems.reduce((accumulator, currentItem) => {
       return (
@@ -58,9 +63,15 @@ const Cart = ({}) => {
       <Box>
         {cartItems.length != 0 ? (
           <Box
-            sx={{ ml: 46, display: "flex", justifyContent: "space-between" }}
+            sx={{
+              ml: 46,
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              width: 780,
+            }}
           >
-            <h4>total amount </h4>
+            <h4>total amount :₹{finalPrice}</h4>
             <Button
               sx={{ width: 140, background: "#da6517", color: "black" }}
               onClick={handleClearCart}

@@ -3,11 +3,14 @@ import img from "../asserts/foodImg.png";
 import { useForm } from "react-hook-form";
 import { Box, TextField, Card, Button } from "@mui/material";
 let Contact = () => {
-  let onSubmit = (data) => {
+  const onSubmit = (data, e) => {
     let storedData = JSON.parse(localStorage.getItem("contactusData")) || [];
-    storedData ? storedData.push(data) : (storedData = [data]);
-    localStorage.setItem("contactusData", JSON.stringify(data));
+    storedData.push(data);
+    localStorage.setItem("contactusData", JSON.stringify(storedData));
+    console.log(storedData);
     alert("success");
+    e.target.reset();
+    // navigate("/login");
   };
   let {
     register,

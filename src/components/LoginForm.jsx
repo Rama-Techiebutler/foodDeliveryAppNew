@@ -122,7 +122,14 @@ const LoginForm = (props) => {
           <Box sx={{ ml: 7 }}>
             <Button
               type="submit"
-              sx={{ width: 90, background: "#da6517", color: "black" }}
+              sx={{
+                width: 90,
+                background: "#da6517",
+                color: "black",
+                "&:hover": {
+                  background: "#e6d9cf",
+                },
+              }}
               // onClick={loginClick}
             >
               Login

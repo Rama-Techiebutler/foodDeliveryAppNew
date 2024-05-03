@@ -6,7 +6,7 @@
 
 // export default Footer;
 
-import React from "react";
+import React, { useState } from "react";
 // import Font from "../../assets/Font";
 import {
   Box,
@@ -20,11 +20,32 @@ import {
 import PlayStoreLogo from "../asserts/PlayStoreLogo.png";
 import AppStoreLogo from "../asserts/AppStoreLogo.png";
 
-// import ShareIcon from "../../assets/Image/ShareIcon.svg";
+import ShareIcon from "../asserts/ShareIcon.svg";
 import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const navigate = useNavigate();
+  // const Footerdata =
+  const [email, setemail] = useState("");
+  const [isValid, setIsValid] = useState(true);
+
+  const handleEmailChange = (e) => {
+    const { value } = e.target;
+    setemail(value);
+
+    // Regular expression for email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setIsValid(emailRegex.test(value)); // Check if the entered email matches the regex pattern
+  };
+
+  const handleSubmitEmail = (e) => {
+    e.preventDefault();
+    let storedData = JSON.parse(localStorage.getItem("contactInfo")) || [];
+    storedData.push(email);
+    localStorage.setItem("contactInfo", JSON.stringify(storedData));
+    alert("We will contact you soon");
+    navigate("/login");
+  };
 
   return (
     <Box sx={{ display: "flex", justifyContent: "center", mt: 7, pb: 5 }}>
@@ -145,6 +166,11 @@ const Footer = () => {
               color="primary"
               id="outlined-required"
               placeholder="Your email"
+              value={email}
+              error={!isValid}
+              onChange={handleEmailChange}
+              helperText={!isValid ? "Invalid email format" : ""}
+              // onChange={(e) => setemail(e.target.value)}
               // size={isMobile ? "small" : "medium"}
               sx={{
                 // width: 240,
@@ -160,20 +186,20 @@ const Footer = () => {
                   },
                 },
               }}
-              // InputProps={{
-              //   style: { padding: "0px 7px 0px 0px", borderRadius: "30px" },
-              //   endAdornment: (
-              //     <InputAdornment position="end">
-              //       <IconButton>
-              //         <Box
-              //           component="img"
-              //           src={ShareIcon}
-              //           sx={{ height: { xs: "38px", md: "36px" } }}
-              //         />
-              //       </IconButton>
-              //     </InputAdornment>
-              //   ),
-              // }}
+              InputProps={{
+                style: { padding: "0px 7px 0px 0px", borderRadius: "30px" },
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton onClick={handleSubmitEmail}>
+                      <Box
+                        component="img"
+                        src={ShareIcon}
+                        sx={{ height: { xs: "38px", md: "36px" } }}
+                      />
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
             />
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <Box
